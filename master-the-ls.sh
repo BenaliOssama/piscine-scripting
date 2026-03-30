@@ -1,2 +1,1 @@
- ls -Aptm
-
+ ls -Aptm | tr "\n" " "
