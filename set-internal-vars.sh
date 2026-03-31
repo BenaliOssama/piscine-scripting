@@ -6,8 +6,9 @@ MY_ARR=(one two three four five)
 echo "$MY_MESSAGE"
 echo "$MY_NUM"
 echo "$MY_PI"
-(IFS=","
-echo "${MY_ARR[*]}" | sed 's/,/, /g')
+#(IFS=","
+echo "${MY_ARR[*]}" #| sed 's/,/, /g'
+#)
 # IFS stands for Internal Field Separator.
 # @ means all elements, 
 #
