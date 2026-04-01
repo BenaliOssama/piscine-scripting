@@ -28,3 +28,6 @@ StageWhat you're doingNetworking & LinuxUnderstanding what's under the hoodMicro
 ### configure to push to multiple remotes at the same time. git doesn't support pulling
 git remote set-url --add --push origin https://learn.zone01oujda.ma/git/...
 git remote set-url --add --push origin https://github.com/BenaliOssama/...
+
+### configure the default remote
+git push origin main
