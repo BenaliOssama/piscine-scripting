@@ -21,3 +21,10 @@ This piscine is where that comfort gets built.
 The bigger picture
 After the piscine, the branch covers:
 StageWhat you're doingNetworking & LinuxUnderstanding what's under the hoodMicroservices + VMsBuilding and deploying real appsDockerPackaging apps into containersKubernetesOrchestrating those containers at scaleCloud + IaCDeploying everything to the cloud, reproduciblyGitLab + TerraformAutomating the whole delivery pipeline
+
+
+## note
+
+### configure to push to multiple remotes at the same time. git doesn't support pulling
+git remote set-url --add --push origin https://learn.zone01oujda.ma/git/...
+git remote set-url --add --push origin https://github.com/BenaliOssama/...
