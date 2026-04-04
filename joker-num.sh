@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [[ $# -ne 1 ]] || ! [[ $1 =~ ^[0-9]+$ ]]; then
+    echo "Error: wrong argument"
+    exit 1
+fi
+
 secret=$1
 moves=0
 tries_left=5
