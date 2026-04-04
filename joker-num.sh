@@ -5,22 +5,18 @@ if [[ $# -ne 1 ]] || ! [[ $1 =~ ^[0-9]+$ ]] || [[ $1 -lt 1 ]] || [[ $1 -gt 100 ]
     exit 1
 fi
 
-
 secret=$1
 moves=0
+tries_left=5
 
+while [[ $tries_left -gt 0 ]]; do
+    read -p "Enter your guess ($tries_left tries left): " guess
 
-for tries_left in 5 4 3 2 1; do
-    while true; do
-        read -p "Enter your guess ($tries_left tries left): " guess
+    if [[ -z "$guess" ]] || ! [[ $guess =~ ^[0-9]+$ ]]; then
+        continue
+    fi
 
-        if [[ -z "$guess" ]] || ! [[ $guess =~ ^[0-9]+$ ]]; then
-            continue
-        fi
-
-        break
-    done
-
+    tries_left=$(( tries_left - 1 ))
     moves=$(( moves + 1 ))
 
     if [[ $guess -eq $secret ]]; then
