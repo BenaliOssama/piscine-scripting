@@ -2,7 +2,6 @@
 
 if [[ $# -ne 1 ]] || ! [[ -d $1 ]]; then
     echo "Error"
-    exit 0
 fi
 
 dir=$1
