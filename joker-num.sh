@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-read secret
-
+secret=$1
 moves=0
 tries_left=5
 
