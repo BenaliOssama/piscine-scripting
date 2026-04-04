@@ -13,7 +13,7 @@ while [[ $tries_left -gt 0 ]]; do
     read -p "Enter your guess ($tries_left tries left):
 " guess
 
-    if [[ -z "$guess" ]] || ! [[ $guess =~ ^[0-9]+$ ]]; then
+    if [[ -z "$guess" ]] || ! [[ $guess =~ ^[0-9]+$ ]] || [[ $guess -gt 100 ]] ; then
         continue
     fi
 
