@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
 
-if [[ $# -ne 1 ]]; then
-    echo "Error: wrong argument"
-    exit 1
-fi
+read secret
 
-secret=$1
 moves=0
 tries_left=5
 
