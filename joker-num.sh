@@ -10,7 +10,7 @@ moves=0
 tries_left=5
 
 while [[ $tries_left -gt 0 ]]; do
-    echo "Enter your guess ($tries_left tries left): "
+    echo "Enter your guess ($tries_left tries left):"
     read guess
 
     if [[ -z "$guess" ]] || ! [[ $guess =~ ^[0-9]+$ ]] || [[ $guess -lt 1 ]] || [[ $guess -gt 100 ]]; then
