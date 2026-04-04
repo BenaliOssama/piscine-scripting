@@ -9,11 +9,11 @@ declare -a names
 declare -a grades
 
 for i in $(seq 1 $1); do
-    echo -n "Student Name #$i: "
+    echo "Student Name #$i: " >&2
     read name
     names+=("$name")
 
-    echo -n "Student Grade #$i: "
+    echo "Student Grade #$i: " >&2
     read grade
 
     if ! [[ $grade =~ ^[0-9]+$ ]] || [[ $grade -gt 100 ]]; then
