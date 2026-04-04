@@ -9,11 +9,9 @@ declare -a names
 declare -a grades
 
 for i in $(seq 1 $1); do
-    echo "Student Name #$i:"
     read name
     names+=("$name")
 
-    echo "Student Grade #$i:"
     read grade
 
     if ! [[ $grade =~ ^[0-9]+$ ]] || [[ $grade -gt 100 ]]; then
@@ -26,15 +24,3 @@ done
 
 for i in $(seq 0 $(( $1 - 1 ))); do
     name=${names[$i]}
-    grade=${grades[$i]}
-
-    if [[ $grade -ge 90 ]]; then
-        echo "$name: You did an excellent job!"
-    elif [[ $grade -ge 70 ]]; then
-        echo "$name: You did a good job!"
-    elif [[ $grade -ge 50 ]]; then
-        echo "$name: You need a bit more effort!"
-    else
-        echo "$name: You had a poor performance!"
-    fi
-done
