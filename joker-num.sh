@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#sh!/usr/bin/env bash
 
 if [[ $# -ne 1 ]] || ! [[ $1 =~ ^[0-9]+$ ]] || [[ $1 -lt 1 ]] || [[ $1 -gt 100 ]]; then
     echo "Error: wrong argument"
-    exit 1
+    exit 0
 fi
 
 secret=$1
