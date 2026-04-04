@@ -4,6 +4,10 @@ if [[ $# -ne 1 ]] || ! [[ $1 =~ ^[0-9]+$ ]]; then
     echo "Error: wrong argument"
     exit 1
 fi
+if [[ $# -ne 1 ]] || ! [[ $1 =~ ^[0-9]+$ ]] || [[ $1 -lt 1 ]] || [[ $1 -gt 100 ]]; then
+    echo "Error: wrong argument"
+    exit 1
+fi
 
 secret=$1
 moves=0
