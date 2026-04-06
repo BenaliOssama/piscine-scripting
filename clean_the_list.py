@@ -4,7 +4,7 @@ def clean_list(shopping_list):
     if 'milk' not in shopping_list:
         shopping_list.append('milk')
     result = []
-    for i , item in enumerate(shopping_list):
+    for i, item in enumerate(shopping_list):
         cleaned = item.strip().capitalize()
-        result.append(str(i+1) + "/" + cleaned)
+        result.append(str(i + 1) + "/ " + cleaned)
     return result
