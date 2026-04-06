@@ -1,4 +1,5 @@
 def do_punishment(first_part, second_part, nb_lines):
+    first_part = first_part.strip()
+    second_part = second_part.strip()
     sentence = first_part + " " + second_part + "."
-    result = "\n".join([sentence] * nb_lines)
-    return result.strip("\n") + "\n" if result else ""
+    return (sentence + "\n") * nb_lines
