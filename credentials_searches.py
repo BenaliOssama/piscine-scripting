@@ -8,9 +8,6 @@ def search(data, results):
         if isinstance(value, dict):
             search(value, results)
 
-
-
-
 def credentials_search():
     if not os.path.exists('logs.json'):
         return
@@ -23,11 +20,13 @@ def credentials_search():
 
     try:
         data = json.loads(content)
-    expect json.JSONDecoderError:
+    except json.JSONDecodeError:
+        return
+
+    if not isinstance(data, dict):
         return
 
     results = {}
-
     search(data, results)
 
     if results:
