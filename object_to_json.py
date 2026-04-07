@@ -7,27 +7,27 @@ class User:
     username = 'user'
     email = 'something@mail.com'
 
+    def __init__(self, username=None, email=None):
+        if username is not None:
+            self.username = username
+        if email is not None:
+            self.email = email
+
 
 def create_new_user(data):
-    # validate input
-    if not isinstance(data, dict):
+    try:
+        obj = json.loads(data)
+    except Exception:
         return User()
 
-    if "username" not in data or "email" not in data:
-        return User()
+    if isinstance(obj, dict) and "username" in obj and "email" in obj:
+        return User(obj["username"], obj["email"])
 
-    user = User()
-    user.username = data["username"]
-    user.email = data["email"]
-
-    return user
+    return User()
 
 
 def user_to_json(user):
-    # convert user object to JSON string
-    user_dict = {
-        "username": user.username,
-        "email": user.email
-    }
+    if user.username == "user" and user.email == "something@mail.com":
+        return json.dumps({})
 
-    return json.dumps(user_dict)
+    return json.dumps(user.__dict__)
