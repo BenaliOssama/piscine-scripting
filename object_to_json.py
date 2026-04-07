@@ -1,4 +1,7 @@
+# object_to_json.py
+
 import json
+
 
 class User:
     username = 'user'
@@ -13,9 +16,7 @@ def create_new_user(data):
     if "username" not in data or "email" not in data:
         return User()
 
-
     user = User()
-    
     user.username = data["username"]
     user.email = data["email"]
 
@@ -25,7 +26,7 @@ def create_new_user(data):
 def user_to_json(user):
     # convert user object to JSON string
     user_dict = {
-        "username" : user.username, 
+        "username": user.username,
         "email": user.email
     }
 
