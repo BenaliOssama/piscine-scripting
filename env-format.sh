@@ -1,4 +1,5 @@
 #!/bin/bash
 
-echo $PWD
+
+printenv PWD
 printenv  | grep "H" | awk -F "=" '{print $1}'
